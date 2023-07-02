@@ -12,4 +12,4 @@ for num in n_list:
             new_list.insert(j, num)
             break
         before_num = num_2
-print(new_list)
+print(new_list[:-1])
