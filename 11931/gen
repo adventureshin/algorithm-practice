@@ -4,4 +4,4 @@ from random import randint
 N = 1_000_000
 print(N)
 for _ in range(N):
-    print(randint(1, 1_000_000))
+    print(randint(-1_000_000, 1_000_000))

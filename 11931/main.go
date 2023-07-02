@@ -5,19 +5,19 @@ import (
 )
 
 func main() {
-	slot := make([]bool, 1000001)
+	slot := make([]bool, 2000002)
 
 	var N int
 	fmt.Scan(&N)
 	for i := 0; i < N; i++ {
 		var number int
 		fmt.Scan(&number)
-		slot[number] = true
+		slot[number + 1000000] = true
 	}
 
-	for i := 1000000; i >= 1; i-- {
+	for i := 2000001; i >= 0; i-- {
 		if slot[i] {
-			fmt.Println(i)
+			fmt.Println(i - 1000000)
 		}
 	}
 }
