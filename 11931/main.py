@@ -1,18 +1,16 @@
 n = int(input())
-n_list = list()
-for i in range(0,n):
-    num = int(input())
-    n_list.append(num)
-first_n = n_list.pop(0)
-p_list = [first_n]
-for num in n_list:
-    for i in range(0,len(p_list)):
-        num_2 = p_list[i]
-        if num == num_2:
+n_list = []
+for i in range(0, n):
+    a = int(input())
+    n_list.append(a)
+new_list = [n_list.pop(0), -1000000]
+for i in range(0, len(n_list)):
+    before_num = 1000000
+    num = n_list.pop(0)
+    for j in range(0, len(new_list)):
+        num_2 = new_list[j]
+        if num_2 < num < before_num:
+            new_list.insert(j, num)
             break
-        elif num > num_2:
-            p_list.insert(i,num)
-            break
-        elif i==len(p_list)-1:
-            p_list.append(num)
-print(p_list)
+        before_num = num_2
+print(new_list[:-1])
