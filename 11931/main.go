@@ -2,22 +2,22 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 func main() {
+	slot := make([]bool, 1000001)
+
 	var N int
 	fmt.Scan(&N)
-
-	numbers := make([]int, N)
 	for i := 0; i < N; i++ {
-		fmt.Scan(&numbers[i])
+		var number int
+		fmt.Scan(&number)
+		slot[number] = true
 	}
 
-	sort.Stable(sort.Reverse(sort.IntSlice(numbers)))
-
-	// Print numbers
-	for _, number := range numbers {
-		fmt.Println(number)
+	for i := 1000000; i >= 1; i-- {
+		if slot[i] {
+			fmt.Println(i)
+		}
 	}
 }
