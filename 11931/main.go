@@ -14,7 +14,7 @@ func main() {
 		fmt.Scan(&numbers[i])
 	}
 
-	sort.Sort(sort.Reverse(sort.IntSlice(numbers)))
+	sort.Stable(sort.Reverse(sort.IntSlice(numbers)))
 
 	// Print numbers
 	for _, number := range numbers {
