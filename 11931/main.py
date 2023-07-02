@@ -3,9 +3,9 @@ n_list = []
 for i in range(0, n):
     a = int(input())
     n_list.append(a)
-new_list = [max(n_list), min(n_list)]
+new_list = [n_list.pop(0), -1000000]
 for num in n_list:
-    before_num = new_list[0]
+    before_num = 1000000
     for j in range(0, len(new_list)):
         num_2 = new_list[j]
         if num_2 < num < before_num:
